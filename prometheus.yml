@@ -1,0 +1,6 @@
+scrape_configs:
+  - job_name: 'axioma'
+    scrape_interval: 10s # Aumentamos el tiempo un poco para que sea menos agresivo
+    scrape_timeout: 5s   # Damos más margen de espera
+    static_configs:
+      - targets: ['web:8000']

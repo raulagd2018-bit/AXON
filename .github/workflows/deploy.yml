@@ -1,0 +1,35 @@
+name: AXON CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.14'
+
+      - name: Instalar dependencias
+        run: |
+          pip install -r requirements.txt
+
+      - name: Ejecutar Tests
+        run: |
+          # Aquí correrías tus tests (ej. pytest)
+          echo "Ejecutando tests de integración..."
+
+      - name: Construir Imagen Docker
+        run: |
+          docker build -t axon-api:${{ github.sha }} .
+
+      # Nota: Aquí añadirías pasos para hacer login en un registro (DockerHub/AWS ECR) 
+      # y hacer el 'push' de tu imagen.
+      - name: Notificar éxito
+        run: echo "AXON compilado y listo para el despliegue."

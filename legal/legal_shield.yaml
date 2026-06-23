@@ -1,0 +1,11 @@
+# AXIOMA LEGAL SHIELD - V1
+declaracion_ai: "El usuario reconoce el uso de modelos de IA para el procesamiento de datos."
+clausula_arbitraje: "Cualquier disputa será resuelta mediante arbitraje vinculante, renunciando a demandas colectivas."
+dmca_policy: 
+  status: "Registrado"
+  takedown_protocol: "Activado"
+  limite_responsabilidad: "Responsabilidad del contenido trasladada al usuario creador."
+compliance:
+  - CCPA_California
+  - GDPR_Global
+  - Apple_Privacy_Labels
